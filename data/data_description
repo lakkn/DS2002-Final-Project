@@ -1,1 +1,6 @@
+Folder: csv_data
+contains CSV files from "our world in data" which contain information about COVID-19 infections in regions around the world
+
+Folder: pdf_data
+contains pdfs of news articles and reviews on COVID-19 which have been broken down into workable chunks for the RAG pipeline
 
