@@ -1,4 +1,5 @@
 # DS2002-Final-Project
+Lakshay Kansal (cjm2gm), Micaiah Lee (jhq5mr), Peter Cao (etm9uh)
 
 How to Build FAISS Index/ Rag Pipeline
 
