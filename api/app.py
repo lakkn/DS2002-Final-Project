@@ -1,7 +1,9 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-# import getResponse from '\rag_pipeline.rag'
+from rag_pipeline import RAGPipeline
 app = FastAPI()
+
+pipe = RAGPipeline.from_artifacts()
 
 items = []
 
@@ -18,11 +20,7 @@ class AskRequest(BaseModel):
 @app.post("/api/ask")
 def ask_question(req: AskRequest):
     print("Question received:", req.question)
-    # reponse = getResponse(req.question)
-    # data cleaning?
-    return {
-        "answer": "babababa",
-        "sources": [
-            {"id": "filename.pdf", "page": 7, "snippet": "This is a dummy snippet from filename.pdf, page 7."},
-        ]
-    }
+
+    response = pipe.answer(req.question)
+
+    return response
